@@ -2,13 +2,14 @@
 <html>
 <head>
 	<title>Lyrics</title>
-	<link rel="stylesheet" type="text/css" href="../../../../../frontTest/main.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="javascript.js"></script>
 </head>
 <body>
 	<div id="topline"></div>
 	<div id="page_container">
 		<header id="header">
-					<div id="logo"><a href="index.html"><img src="../../../../../frontTest/logo.png"/></a></div>
+					<div id="logo"><a href="index.html"><img src="logo.png"/></a></div>
 					<!--<input id="search" type="text" name="search" autocomplete="off" placeholder="Search..."></input>-->
 					<div id="header_content">
 						<div id="menu_content">
@@ -16,8 +17,55 @@
 							<a class="menubar" href="toplist.html">Toplist</a>
 							<a class="menubar" href="ranking.html" >Ranking</a>
 						</div>
-						<a id="header_login" href="login.html" >Log in</a>
-						<a id="header_reg" href="signup.html">Sign Up</a>
+						<!--TODO HA KI X-ELI A LOGINT/SIGNUPOT AKKOR TÖRÖLJE KI A LABELEKET-->
+						<!--TODO FORMOK KÖZÉPRE IGAZÍTÁSA-->
+						<button id="header_login" onclick="document.getElementById('loginForm').style.display='block'">Log in</button>
+							<div id="loginForm" class="modalLogin">
+							  <form class="modal-content" action="/action_page.php">
+							    <div class="container">
+							      <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close Login">&times;</span>
+							      <h1 class="titleForm">Log in</h1>
+
+							      <label for="username"><b>Username</b></label>
+							      <input type="text" placeholder="Enter Username" name="username" required>
+
+							      <label for="psw"><b>Password</b></label>
+							      <input type="password" placeholder="Enter Password" name="psw" required>
+
+							      <div class="clearfix">
+							        <button type="button" onclick="document.getElementById('loginForm').style.display='none'" class="cancelbtn">Cancel</button>
+							        <button type="submit" class="signupbtn">Log In</button>
+							      </div>
+							    </div>
+							  </form>
+							</div>
+							
+						<button id="header_reg" onclick="document.getElementById('registerForm').style.display='block'">Sign Up</button>
+							<div id="registerForm" class="modalReg">
+							  <form class="modal-content" action="/action_page.php">
+							    <div class="container">
+							      <span onclick="document.getElementById('registerForm').style.display='none'" class="close" title="Close Register">&times;</span>
+							      <h1 class="titleForm">Sign Up</h1>
+
+							      <label for="username"><b>Username</b></label>
+							      <input type="text" placeholder="Enter Username" name="username" required>
+
+							      <label for="email"><b>Email</b></label>
+							      <input type="text" placeholder="Enter Email" name="email" required>
+
+							      <label for="psw"><b>Password</b></label>
+							      <input type="password" placeholder="Enter Password" name="psw" required>
+
+							      <label for="psw-repeat"><b>Repeat Password</b></label>
+							      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+							      
+							      <div class="clearfix">
+							        <button type="button" onclick="document.getElementById('registerForm').style.display='none'" class="cancelbtn">Cancel</button>
+							        <button type="submit" class="signupbtn">Sign Up</button>
+							      </div>
+							    </div>
+							  </form>
+							</div>
 					</div>
 		</header>
 		<div id="searchbar">
