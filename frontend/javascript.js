@@ -1,18 +1,26 @@
 
-var modal1 = document.getElementById('registerForm');
-modal1.backdrop = "static";
-modal1.keyboard = false;
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
-    }
-}
-var modal2 = document.getElementById('loginForm');
+var modalReg = document.getElementById('registerForm');
+var modalLogin = document.getElementById('loginForm');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
+    if (event.target == modalReg) {
+        modalReg.style.display = "none";
+        clearReg();
     }
+    if (event.target == modalLogin) {
+        modalLogin.style.display = "none";
+        clearLogin();
+    }
+}
+
+function clearLogin() {
+	document.getElementById('usernameLogin').value = '';
+	document.getElementById('passwordLogin').value = '';
+}
+function clearReg() {
+	document.getElementById('usernameReg').value = '';
+	document.getElementById('emailReg').value = '';
+	document.getElementById('passwordReg').value = '';
+	document.getElementById('passwordRepeatReg').value = '';
 }
